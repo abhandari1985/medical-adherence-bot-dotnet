@@ -1,0 +1,72 @@
+[
+  {
+    "DocumentID": "cnUXoR0KqTI0cv31SYo",
+    "dischargeDate": "2025-07-30T11:00:00Z",
+    "doctorName": "Patel",
+    "followUpAppointment": {
+      "scheduled": false,
+      "appointmentDateTime": null,
+      "confirmationSent": false
+    },
+    "followUpCall": {
+      "callInitiated": false,
+      "callCompleted": false,
+      "callTimestamp": null,
+      "adherenceAnswers": {
+        "filledPrescription": null,
+        "missedDoses": null,
+        "sideEffects": null
+      },
+      "callTranscriptUrl": null
+    },
+    "followUpWindowDays": 14,
+    "patientName": "Isha Miller",
+    "phoneNumber": "+919988776655",
+    "prescriptions": [
+      {
+        "medicationName": "Amoxicillin",
+        "dosage": "500mg",
+        "frequency": "every 12 hours",
+        "duration": "14 days"
+      }
+    ]
+  },
+  {
+    "DocumentID": "aF8GxS2LpW91bz7kM3N",
+    "dischargeDate": "2025-07-30T09:30:00Z",
+    "doctorName": "Gupta",
+    "followUpAppointment": {
+      "scheduled": false,
+      "appointmentDateTime": null,
+      "confirmationSent": false
+    },
+    "followUpCall": {
+      "callInitiated": false,
+      "callCompleted": false,
+      "callTimestamp": null,
+      "adherenceAnswers": {
+        "filledPrescription": null,
+        "missedDoses": null,
+        "sideEffects": null
+      },
+      "callTranscriptUrl": null
+    },
+    "followUpWindowDays": 7,
+    "patientName": "Jason Smith",
+    "phoneNumber": "+919876543210",
+    "prescriptions": [
+      {
+        "medicationName": "Tramadol",
+        "dosage": "100mg",
+        "frequency": "Every 4 to 6 hours as needed",
+        "duration": "10 days"
+      },
+      {
+        "medicationName": "Pantoprazole",
+        "dosage": "40mg",
+        "frequency": "Once daily before breakfast",
+        "duration": "10 days"
+      }
+    ]
+  }
+]
