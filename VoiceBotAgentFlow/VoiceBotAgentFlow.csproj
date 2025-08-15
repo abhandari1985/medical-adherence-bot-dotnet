@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Identity" Version="1.15.0" />
+    <PackageReference Include="Azure.AI.Projects" Version="1.0.0-beta.10" />
+    <PackageReference Include="Azure.AI.Agents.Persistent" Version="1.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.8" />
     <PackageReference Include="Microsoft.Graph" Version="5.90.0" />
     <PackageReference Include="System.Net.Http.Json" Version="9.0.8" />

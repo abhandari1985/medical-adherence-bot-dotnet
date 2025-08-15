@@ -14,6 +14,7 @@ class Program
 		var config = new ConfigurationBuilder()
 			.SetBasePath(AppContext.BaseDirectory)
 			.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+			.AddJsonFile("appsettings.local.json", optional: true, reloadOnChange: true)
 			.Build();
 
 		// Load patient data from patients.json
@@ -31,11 +32,30 @@ class Program
 		var foundryService = new FoundryService(httpClient, config, schedulingService, patient);
 
 		Console.WriteLine($"Bot loaded for patient: {patient.patientName} (Doctor: {patient.doctorName})");
-		Console.WriteLine("Enter your message for the bot:");
-		var userText = Console.ReadLine();
+		// Send start call trigger to generate a welcome message
+		var welcome = await foundryService.ProcessMessageAsync("__START_CALL__");
+		Console.WriteLine("Bot welcome:");
+		Console.WriteLine(welcome);
+		// Interactive loop: continue to accept user input until they type 'exit'
+		while (true)
+		{
+			var userText = Console.ReadLine();
+			if (userText == null) break; // stdin closed
+			if (string.Equals(userText.Trim(), "exit", StringComparison.OrdinalIgnoreCase))
+			{
+				Console.WriteLine("Exiting.");
+				break;
+			}
 
-		var reply = await foundryService.ProcessMessageAsync(userText ?? "Hello, agent!");
-		Console.WriteLine("Bot reply:");
-		Console.WriteLine(reply);
+			if (string.IsNullOrWhiteSpace(userText))
+			{
+				// skip empty input and prompt again
+				continue;
+			}
+
+			var reply = await foundryService.ProcessMessageAsync(userText);
+			Console.WriteLine("Bot reply:");
+			Console.WriteLine(reply);
+		}
 	}
 }

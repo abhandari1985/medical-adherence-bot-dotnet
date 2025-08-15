@@ -43,6 +43,7 @@ local.settings.json
 # Sensitive configuration files (keep template, ignore actual credentials)
 appsettings.Development.json
 appsettings.Production.json
+appsettings.local.json
 
 # OS generated files
 .DS_Store
